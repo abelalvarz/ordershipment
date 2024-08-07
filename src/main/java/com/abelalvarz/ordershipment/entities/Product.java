@@ -12,22 +12,18 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-@Table(name = "TC_PRODUCT")
 public class Product {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "SKU")
     private String sku;
 
-    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "DESCRIPTION")
     private String description;
 
-    @Column(name = "CATEGORY")
     @Enumerated(EnumType.STRING)
     private Category category;
 }
